@@ -16,11 +16,15 @@ class Dude(User):
     dude_age = 21
     bro_status = "Major"
 
+class Friend(User):
+    friend_age = 30
+    friend_type = "Super"
+
     def getLoginInfo(self):
         entry_name = input("Enter your name: ")
         entry_email = input("Enter your email: ")
         entry_status = input("What's your bro status: ")
-        if (entry_email == self.email and entry_pin == self.bro_status):
+        if (entry_email == self.email and entry_status == self.bro_status):
             print("Suh dude {}".format(entry_name))
         else:
             print("You sketch bruh")
@@ -30,3 +34,6 @@ customer.getLoginInfo()
 
 bruh = Dude()
 bruh.getLoginInfo()
+
+friend = User()
+friend.getLoginInfo()
