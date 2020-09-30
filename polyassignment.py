@@ -16,10 +16,6 @@ class Dude(User):
     dude_age = 21
     bro_status = "Major"
 
-class Friend(User):
-    friend_age = 30
-    friend_type = "Super"
-
     def getLoginInfo(self):
         entry_name = input("Enter your name: ")
         entry_email = input("Enter your email: ")
@@ -28,6 +24,20 @@ class Friend(User):
             print("Suh dude {}".format(entry_name))
         else:
             print("You sketch bruh")
+
+class Friend(User):
+    friend_age = 30
+    friend_type = "Super"
+
+    def getLoginInfo(self):
+        entry_name = input("Enter your name: ")
+        entry_email = input("Enter your email: ")
+        entry_status = input("How much of a friend are you? ")
+        if (entry_email == self.email and entry_status == self.friend_type):
+            print("You're such a nice friend {}".format(entry_name))
+        else:
+            print("Are you really my friend?")
+
 
 customer = User()
 customer.getLoginInfo()
